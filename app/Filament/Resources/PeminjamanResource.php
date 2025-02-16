@@ -32,7 +32,8 @@ class PeminjamanResource extends Resource
                         Select::make('buku_id')
                             ->relationship('buku', 'judul')
                             ->required(),
-                        DatePicker::make('tanggal_pinjam')->required(),
+                        Forms\Components\TextInput::make('quantity')->numeric()->minValue(1)->required(),    
+                        DatePicker::make('tanggal_pinjam')->required()->default(now()),
                         DatePicker::make('tanggal_kembali'),
                     ]),
             ]);
@@ -44,6 +45,7 @@ class PeminjamanResource extends Resource
             ->columns([
                 TextColumn::make('siswa.nama')->sortable(),
                 TextColumn::make('buku.judul')->sortable(),
+                Textcolumn::make('quantity')->sortable(),
                 TextColumn::make('tanggal_pinjam')->sortable(),
                 TextColumn::make('tanggal_kembali')->sortable(),
             ])

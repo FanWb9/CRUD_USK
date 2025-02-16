@@ -45,10 +45,15 @@ class BukuResource extends Resource
                     ->label('Tahun Terbit')
                     ->placeholder('Masukan Tahun Terbit')
                     ->required(),
+                    
+                    Forms\Components\TextInput::make('quantity')
+                    ->label('Jumlah Stok Buku')
+                    ->placeholder('Masukan Jumlah Stok Buku')
+                    ->required(), 
 
                     Forms\Components\TextInput::make('jumlah_buku')
-                    ->label('Jumlah Buku')
-                    ->placeholder('Masukan Jumlah Buku')
+                    ->label('Jumlah Halaman Buku')
+                    ->placeholder('Masukan Jumlah Halaman Buku')
 
                 ])
             ]);
@@ -63,7 +68,8 @@ class BukuResource extends Resource
                 Tables\Columns\TextColumn::make('pengarang')->label('Pengarang'),
                 Tables\Columns\TextColumn::make('penerbit')->label('Penerbit'),
                 Tables\Columns\TextColumn::make('tahun_terbit')->label('Tahun Terbit'),
-                Tables\Columns\TextColumn::make('jumlah_buku')->label('Jumlah Buku'),
+                Tables\Columns\TextColumn::make('quantity')->label('Jumlah Stok Buku'), 
+                Tables\Columns\TextColumn::make('jumlah_buku')->label('Jumlah Halaman Buku'),
             ])
             ->filters([
                 //

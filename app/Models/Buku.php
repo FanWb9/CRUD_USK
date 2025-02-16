@@ -10,11 +10,13 @@ class Buku extends Model
 {
     //
     use Hasfactory;
+    
     protected $fillable = [
         'judul',
         'pengarang',
         'penerbit',
         'tahun_terbit',
+        'quantity',
         'jumlah_buku',
     ];
     public function peminjaman(){
